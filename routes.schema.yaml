@@ -37,6 +37,8 @@ components:
 
     stop:
       type: object
+      required:
+        - pid
       properties:
         pid:
           $ref: '#/components/schemas/pid'
