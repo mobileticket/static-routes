@@ -1,0 +1,133 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://bob.samtrafiken.se/v1/zoneinfo.schema.json
+
+title: Static routing information
+type: object
+required:
+- routes
+properties:
+  routes:
+    type: array
+    items:
+      $ref: '#/components/schemas/route'
+
+
+components:
+  schemas:
+
+    route:
+      type: object
+      required:
+        - from
+        - to
+        - products
+      properties:
+        from:
+          $ref: '#/components/schemas/stop'
+        to:
+          $ref: '#/components/schemas/stop'
+        products:
+          type: array
+          items:
+            $ref: '#/components/schemas/product'
+
+    pid:
+      type: integer
+      minimum: 0
+
+    stop:
+      type: object
+      properties:
+        pid:
+          $ref: '#/components/schemas/pid'
+        stopPlaceId:
+          type: string
+        description:
+          type: string
+
+    product:
+      type: object
+      required:
+        - pid
+        - productFilter
+      properties:
+        pid:
+          $ref: '#/components/schemas/pid'
+        productFilter:
+          type: object
+          properties:
+            group:
+              type: array
+              items:
+                $ref: '#/components/schemas/group'
+            adjacencies:
+                $ref: '#/components/schemas/adjacencies'
+
+    group:
+      type: object
+      description: Collection of groupIds with a certain groupType (logical AND)
+      required:
+        - groupType
+        - groupIds
+      properties:
+        groupType:
+          type: string
+        groupIds:
+          type: array
+          items:
+            description: groupId
+            type: string
+
+    adjacencies:
+      description: |
+        Entry and exit points when the product is part of a set of products
+        that spans several participant organisations
+      type: object
+      properties:
+        ingress:
+          description: Entry point
+          $ref: '#/components/schemas/adjacency'
+        egress:
+          description: Exit point
+          $ref: '#/components/schemas/adjacency'
+
+    adjacency:
+      description: Border crossing position to another participant
+      type: object
+      required:
+        - pid
+      properties:
+        pid:
+          description: Participant identifier
+          type: integer
+          format: int64
+          example: 16
+        coordinate:
+          description: Geographical position of border transit
+          $ref: '#/definitions/geoPosition'
+        extendedValidityPeriod:
+          description: |
+            Requested validity for a cross-border ticket. If granted, replaces the default
+            relative validity. ISO 8601:2004 duration format (MTS8, chapter 2.4).
+            **Deprecated**. May be removed in a future release. It has an ambiguity
+            regarding if this refer to the relative or absolute validity.
+          type: string
+          example: PT2H
+
+    geoPosition:
+      description: Geopos (WGS84 decimal)
+      type: object
+      required:
+        - lat
+        - long
+      properties:
+        lat:
+          description: Latitude
+          type: number
+          format: double
+          example: 59.329627
+        long:
+          description: Longitude
+          type: number
+          format: double
+          example: 18.059201

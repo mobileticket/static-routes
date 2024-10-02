@@ -1,0 +1,37 @@
+{
+    "routes": [
+        {
+            "from": {
+                "pid": 10,
+                "description": "Skåne"
+            },
+            "to": {
+                "pid": 22,
+                "stopPlaceId": "SE:050:StopPlace:80",
+                "description": "Halmstad C"
+            },
+            "products": [
+                {
+                    "pid": 22,
+                    "productFilter": {
+                        "group": [
+                            {
+                                "groupType": "zone",
+                                "groupIds": [
+                                    "421",
+                                    "430",
+                                    "431"
+                                ]
+                            }
+                        ],
+                        "adjacencies": {
+                            "ingress": {
+                                "pid": 10
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
