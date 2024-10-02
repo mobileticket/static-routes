@@ -1,6 +1,7 @@
 {
     "routes": [
         {
+            "description": "Öresundståg Skåne-Halmstad",
             "from": {
                 "pid": 10,
                 "description": "Skåne"
@@ -34,6 +35,7 @@
             ]
         },
         {
+            "description": "Öresundståg Skåne-Göteborg",
             "from": {
                 "pid": 10,
                 "description": "Skåne"

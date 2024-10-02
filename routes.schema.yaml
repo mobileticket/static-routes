@@ -22,6 +22,8 @@ components:
         - to
         - products
       properties:
+        description:
+          type: string
         from:
           $ref: '#/components/schemas/stop'
         to:
