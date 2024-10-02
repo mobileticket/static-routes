@@ -32,6 +32,61 @@
                     }
                 }
             ]
+        },
+        {
+            "from": {
+                "pid": 10,
+                "description": "Skåne"
+            },
+            "to": {
+                "pid": 51,
+                "stopPlaceId": "SE:050:StopPlace:2",
+                "description": "Göteborg C"
+            },
+            "products": [
+                {
+                    "pid": 22,
+                    "productFilter": {
+                        "group": [
+                            {
+                                "groupType": "zone",
+                                "groupIds": [
+                                    "421",
+                                    "430",
+                                    "431"
+                                ]
+                            }
+                        ],
+                        "adjacencies": {
+                            "ingress": {
+                                "pid": 10
+                            },
+                            "egress": {
+                                "pid": 51
+                            }
+                        }
+                    }
+                },
+                {
+                    "pid": 51,
+                    "productFilter": {
+                        "group": [
+                            {
+                                "groupType": "zone",
+                                "groupIds": [
+                                    "3001",
+                                    "3002"
+                                ]
+                            }
+                        ],
+                        "adjacencies": {
+                            "ingress": {
+                                "pid": 22
+                            }
+                        }
+                    }
+                }
+            ]
         }
     ]
 }
