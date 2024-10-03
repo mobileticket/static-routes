@@ -18,19 +18,19 @@ components:
     route:
       type: object
       required:
-        - journey
+        - selector
         - products
       properties:
         description:
           type: string
-        journey:
-          $ref: '#/components/schemas/journey'
+        selector:
+          $ref: '#/components/schemas/selector'
         products:
           type: array
           items:
             $ref: '#/components/schemas/product'
 
-    journey:
+    selector:
       type: object
       required:
         - origin
