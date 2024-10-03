@@ -2,14 +2,19 @@
     "routes": [
         {
             "description": "Öresundståg Skåne-Halmstad",
-            "from": {
-                "pid": 10,
-                "description": "Skåne"
-            },
-            "to": {
-                "pid": 22,
-                "stopPlaceId": "SE:050:StopPlace:80",
-                "description": "Halmstad C"
+            "journey": {
+                "origin": {
+                    "description": "Skåne",
+                    "pid": 10
+                },
+                "destination": {
+                    "description": "Halmstad C",
+                    "stopPlaceId": "SE:050:StopPlace:80"
+                },
+                "service": {
+                    "description": "Öresundståg",
+                    "serviceId": "otrain"
+                }
             },
             "products": [
                 {
@@ -21,7 +26,11 @@
                                 "groupIds": [
                                     "421",
                                     "430",
-                                    "431"
+                                    "431",
+                                    "450",
+                                    "451",
+                                    "460",
+                                    "461"
                                 ]
                             }
                         ],
@@ -35,15 +44,57 @@
             ]
         },
         {
-            "description": "Öresundståg Skåne-Göteborg",
-            "from": {
-                "pid": 10,
-                "description": "Skåne"
+            "description": "Öresundståg Laholm-Skåne",
+            "journey": {
+                "origin": {
+                    "description": "Laholm Station",
+                    "stopPlaceId": "SE:050:StopPlace:58760"
+                },
+                "destination": {
+                    "description": "Skåne",
+                    "pid": 10
+                },
+                "service": {
+                    "description": "Öresundståg",
+                    "serviceId": "otrain"
+                }
             },
-            "to": {
-                "pid": 51,
-                "stopPlaceId": "SE:050:StopPlace:2",
-                "description": "Göteborg C"
+            "products": [
+                {
+                    "pid": 22,
+                    "productFilter": {
+                        "group": [
+                            {
+                                "groupType": "zone",
+                                "groupIds": [
+                                    "421"
+                                ]
+                            }
+                        ],
+                        "adjacencies": {
+                            "egress": {
+                                "pid": 10
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "description": "Öresundståg Skåne-Göteborg",
+            "journey": {
+                "origin": {
+                    "description": "Skåne",
+                    "pid": 10
+                },
+                "destination": {
+                    "description": "Göteborg C",
+                    "stopPlaceId": "SE:050:StopPlace:2"
+                },
+                "service": {
+                    "description": "Öresundståg",
+                    "serviceId": "otrain"
+                }
             },
             "products": [
                 {
@@ -84,6 +135,46 @@
                         "adjacencies": {
                             "ingress": {
                                 "pid": 22
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "description": "Öresundståg Skåne-Alvesta",
+            "journey": {
+                "origin": {
+                    "description": "Skåne",
+                    "pid": 10
+                },
+                "destination": {
+                    "description": "Alvesta Station",
+                    "stopPlaceId": "SE:050:StopPlace:4"
+                },
+                "service": {
+                    "description": "Öresundståg",
+                    "serviceId": "otrain"
+                }
+            },
+            "products": [
+                {
+                    "pid": 23,
+                    "productFilter": {
+                        "group": [
+                            {
+                                "groupType": "zone",
+                                "groupIds": [
+                                    "781",
+                                    "726",
+                                    "725",
+                                    "721"
+                                ]
+                            }
+                        ],
+                        "adjacencies": {
+                            "ingress": {
+                                "pid": 10
                             }
                         }
                     }

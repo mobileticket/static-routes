@@ -18,20 +18,32 @@ components:
     route:
       type: object
       required:
-        - from
-        - to
+        - journey
         - products
       properties:
         description:
           type: string
-        from:
-          $ref: '#/components/schemas/stop'
-        to:
-          $ref: '#/components/schemas/stop'
+        journey:
+          $ref: '#/components/schemas/journey'
         products:
           type: array
           items:
             $ref: '#/components/schemas/product'
+
+    journey:
+      type: object
+      required:
+        - origin
+        - destination
+      properties:
+        description:
+          type: string
+        origin:
+          $ref: '#/components/schemas/stop'
+        destination:
+          $ref: '#/components/schemas/stop'
+        service:
+          $ref: '#/components/schemas/service'
 
     pid:
       type: integer
@@ -39,14 +51,22 @@ components:
 
     stop:
       type: object
-      required:
-        - pid
       properties:
         pid:
           $ref: '#/components/schemas/pid'
         stopPlaceId:
           type: string
         description:
+          type: string
+
+    service:
+      type: object
+      required:
+        - serviceId
+      properties:
+        description:
+          type: string
+        serviceId:
           type: string
 
     product:
