@@ -17,6 +17,16 @@ components:
 
     route:
       type: object
+      properties:
+        description:
+          type: string
+        journeys:
+          type: array
+          items:
+            $ref: '#/components/schemas/journey'
+
+    journey:
+      type: object
       required:
         - from
         - to

@@ -1,92 +1,174 @@
 {
     "routes": [
         {
-            "description": "Öresundståg Skåne-Halmstad",
-            "from": {
-                "pid": 10,
-                "description": "Skåne"
-            },
-            "to": {
-                "pid": 22,
-                "stopPlaceId": "SE:050:StopPlace:80",
-                "description": "Halmstad C"
-            },
-            "products": [
+            "description": "Öresundståg Skåne-Göteborg",
+            "journeys": [
                 {
-                    "pid": 22,
-                    "productFilter": {
-                        "group": [
-                            {
-                                "groupType": "zone",
-                                "groupIds": [
-                                    "421",
-                                    "430",
-                                    "431"
-                                ]
-                            }
-                        ],
-                        "adjacencies": {
-                            "ingress": {
-                                "pid": 10
+                    "from": {
+                        "pid": 10,
+                        "description": "Skåne"
+                    },
+                    "to": {
+                        "pid": 22,
+                        "stopPlaceId": "SE:050:StopPlace:80",
+                        "description": "Halmstad C"
+                    },
+                    "products": [
+                        {
+                            "pid": 22,
+                            "productFilter": {
+                                "group": [
+                                    {
+                                        "groupType": "zone",
+                                        "groupIds": [
+                                            "421",
+                                            "430",
+                                            "431"
+                                        ]
+                                    }
+                                ],
+                                "adjacencies": {
+                                    "ingress": {
+                                        "pid": 10
+                                    }
+                                }
                             }
                         }
-                    }
+                    ]
+                },
+                {
+                    "from": {
+                        "pid": 10,
+                        "description": "Skåne"
+                    },
+                    "to": {
+                        "pid": 51,
+                        "stopPlaceId": "SE:050:StopPlace:2",
+                        "description": "Göteborg C"
+                    },
+                    "products": [
+                        {
+                            "pid": 22,
+                            "productFilter": {
+                                "group": [
+                                    {
+                                        "groupType": "zone",
+                                        "groupIds": [
+                                            "421",
+                                            "430",
+                                            "431",
+                                            "450",
+                                            "451",
+                                            "460",
+                                            "461"
+                                        ]
+                                    }
+                                ],
+                                "adjacencies": {
+                                    "ingress": {
+                                        "pid": 10
+                                    },
+                                    "egress": {
+                                        "pid": 51
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "pid": 51,
+                            "productFilter": {
+                                "group": [
+                                    {
+                                        "groupType": "zone",
+                                        "groupIds": [
+                                            "3000",
+                                            "3001"
+                                        ]
+                                    }
+                                ],
+                                "adjacencies": {
+                                    "ingress": {
+                                        "pid": 22
+                                    }
+                                }
+                            }
+                        }
+                    ]
                 }
             ]
         },
         {
-            "description": "Öresundståg Skåne-Göteborg",
-            "from": {
-                "pid": 10,
-                "description": "Skåne"
-            },
-            "to": {
-                "pid": 51,
-                "stopPlaceId": "SE:050:StopPlace:2",
-                "description": "Göteborg C"
-            },
-            "products": [
+            "description": "Öresundståg Göteborg-Skåne",
+            "journeys": [
                 {
-                    "pid": 22,
-                    "productFilter": {
-                        "group": [
-                            {
-                                "groupType": "zone",
-                                "groupIds": [
-                                    "421",
-                                    "430",
-                                    "431"
-                                ]
-                            }
-                        ],
-                        "adjacencies": {
-                            "ingress": {
-                                "pid": 10
-                            },
-                            "egress": {
-                                "pid": 51
+                    "from": {
+                        "pid": 22,
+                        "stopPlaceId": "SE:050:StopPlace:58760",
+                        "description": "Laholm Station"
+                    },
+                    "to": {
+                        "pid": 10,
+                        "description": "Skåne"
+                    },
+                    "products": [
+                        {
+                            "pid": 22,
+                            "productFilter": {
+                                "group": [
+                                    {
+                                        "groupType": "zone",
+                                        "groupIds": [
+                                            "421"
+                                        ]
+                                    }
+                                ],
+                                "adjacencies": {
+                                    "egress": {
+                                        "pid": 10
+                                    }
+                                }
                             }
                         }
-                    }
-                },
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Öresundståg Skåne-Kalmar",
+            "journeys": [
                 {
-                    "pid": 51,
-                    "productFilter": {
-                        "group": [
-                            {
-                                "groupType": "zone",
-                                "groupIds": [
-                                    "3001",
-                                    "3002"
-                                ]
-                            }
-                        ],
-                        "adjacencies": {
-                            "ingress": {
-                                "pid": 22
+                    "from": {
+                        "pid": 10,
+                        "description": "Skåne"
+                    },
+                    "to": {
+                        "pid": 22,
+                        "stopPlaceId": "SE:050:StopPlace:4",
+                        "description": "Alvesta Station"
+                    },
+                    "products": [
+                        {
+                            "pid": 23,
+                            "productFilter": {
+                                "group": [
+                                    {
+                                        "groupType": "zone",
+                                        "groupIds": [
+                                            "781",
+                                            "726",
+                                            "725",
+                                            "721"
+                                        ]
+                                    }
+                                ],
+                                "adjacencies": {
+                                    "ingress": {
+                                        "pid": 10
+                                    }
+                                }
                             }
                         }
-                    }
+                    ]
                 }
             ]
         }
