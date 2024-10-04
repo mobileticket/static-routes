@@ -18,19 +18,19 @@ components:
     route:
       type: object
       required:
-        - selector
+        - designator
         - products
       properties:
         description:
           type: string
-        selector:
-          $ref: '#/components/schemas/selector'
+        designator:
+          $ref: '#/components/schemas/designator'
         products:
           type: array
           items:
             $ref: '#/components/schemas/product'
 
-    selector:
+    designator:
       type: object
       required:
         - origin

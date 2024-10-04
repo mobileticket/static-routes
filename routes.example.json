@@ -2,7 +2,7 @@
     "routes": [
         {
             "description": "Öresundståg Skåne-Halmstad",
-            "selector": {
+            "designator": {
                 "origin": {
                     "description": "Skåne",
                     "pid": 10
@@ -45,7 +45,7 @@
         },
         {
             "description": "Öresundståg Laholm-Skåne",
-            "selector": {
+            "designator": {
                 "origin": {
                     "description": "Laholm Station",
                     "stopPlaceId": "SE:050:StopPlace:58760"
@@ -82,7 +82,7 @@
         },
         {
             "description": "Öresundståg Skåne-Göteborg",
-            "selector": {
+            "designator": {
                 "origin": {
                     "description": "Skåne",
                     "pid": 10
@@ -143,7 +143,7 @@
         },
         {
             "description": "Öresundståg Skåne-Alvesta",
-            "selector": {
+            "designator": {
                 "origin": {
                     "description": "Skåne",
                     "pid": 10
